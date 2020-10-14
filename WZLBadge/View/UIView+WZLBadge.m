@@ -159,6 +159,9 @@ static const CGFloat kWZLBadgeDefaultRedDotRadius = 4.f;
     
     if (nil == self.badge) {
         CGFloat redotWidth = kWZLBadgeDefaultRedDotRadius *2;
+        if ([self isKindOfClass:UILabel.class] || [self isKindOfClass:UIButton.class]) {
+            [self sizeToFit];
+        }
         CGRect frm = CGRectMake(CGRectGetWidth(self.frame), -redotWidth, redotWidth, redotWidth);
         self.badge = [[UILabel alloc] initWithFrame:frm];
         self.badge.textAlignment = NSTextAlignmentCenter;
