@@ -159,7 +159,7 @@ static const CGFloat kWZLBadgeDefaultRedDotRadius = 4.f;
     
     if (nil == self.badge) {
         CGFloat redotWidth = kWZLBadgeDefaultRedDotRadius *2;
-        if ([self isKindOfClass:UILabel.class] || [self isKindOfClass:UIButton.class]) {
+        if ([self isKindOfClass:UILabel.class]) {
             [self sizeToFit];
         }
         CGRect frm = CGRectMake(CGRectGetWidth(self.frame), -redotWidth, redotWidth, redotWidth);
